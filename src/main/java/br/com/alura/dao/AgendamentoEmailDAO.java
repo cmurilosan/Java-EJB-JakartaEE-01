@@ -36,6 +36,10 @@ public class AgendamentoEmailDAO {
                 .getResultList();
     }
 
+    public void inserir(AgendamentoEmail agendamentoEmail) {
+        entityManager.persist(agendamentoEmail);
+    }
+
     /*
     Adicionamos @Stateless na Classe e @PersistenceContext no atributo
      */
