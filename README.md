@@ -10,3 +10,8 @@
 - Em uma aplicação corporativa, utilizamos diversos recursos de infraestrutura, tais como transação, pool de conexões, filas entre outros.
 - Para que o desenvolvedor foque nas regras negociais da aplicação e menos com questões de infraestrutura, criou-se um recurso, que é uma especificação do **Jakarta EE**, chamado **EJB (Enterprise Java Beans)**.
 - O **EJB** faz com que haja a inversão de controle, passando a responsabilidade de instanciar objetos e fornecimento de serviços para o servidor de aplicação. Para criar um **EJB** basta anotar uma classe com `@Stateless`
+
+#### 03 - Persistência com JPA
+  - Usando o **JPA** com **EJB**, vimos que o servidor de aplicação é responsável por nos fornecer uma instância do **EntityManager**.
+  - Temos que informar, para o nosso servidor de aplicação, qual banco de dados iremos acessar e essa configuração é feita em um recurso chamado **DataSource**.
+  - Uma vez configurado, podemos fazer as operações com o banco de dados, como *inserts*, *deletes*, entre outros.
