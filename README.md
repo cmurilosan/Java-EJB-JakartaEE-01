@@ -15,3 +15,9 @@
   - Usando o **JPA** com **EJB**, vimos que o servidor de aplicação é responsável por nos fornecer uma instância do **EntityManager**.
   - Temos que informar, para o nosso servidor de aplicação, qual banco de dados iremos acessar e essa configuração é feita em um recurso chamado **DataSource**.
   - Uma vez configurado, podemos fazer as operações com o banco de dados, como *inserts*, *deletes*, entre outros.
+  
+#### 04 - Fazendo requisições ao nosso EJB com JAX-RS
+  - Para fazer requisições para nossa aplicação, utiliza-se o protocolo **HTTP**.
+  - Para abstrair a complexidade do protocolo, o **Jakarta EE** nos provê um recurso chamado **JAX-RS**.
+  - O **JAX-RS** fornecerá um conjunto de classes, interfaces e anotações.
+  - Com pequenas configurações, podemos definir o método da requisição, o tipo de formato que a aplicação irá consumir e/ou produzir, qual status a resposta da requisição irá retornar, entre outras facilidades.
