@@ -4,11 +4,11 @@ import br.com.alura.entidade.AgendamentoEmail;
 import br.com.alura.servico.AgendamentoEmailServico;
 
 import javax.ejb.Schedule;
-import javax.ejb.Stateless;
+import javax.ejb.Singleton;
 import javax.inject.Inject;
 import java.util.List;
 
-@Stateless
+@Singleton
 public class AgendamentoEmailJob {
 
     @Inject
@@ -24,4 +24,17 @@ public class AgendamentoEmailJob {
         });
 //        SCHEDULE CONTROLA DE QUANTO EM QUANTO TEMPO SERA ENVIADO O EMAIL
     }
+
+    /*
+    STATELESS X SINGLETON
+    No desenvolvimento da nossa aplicação não dará para ver muito este cenário,
+    pois apenas nós fazemos requisição para a aplicação em desenvolvimento.
+    Se fosse para produção, com um número de requisições pelos usuários aumentando,
+    com o @Stateless seriam criados vários objetos de AgendarEmailJob,
+    por mais que nas instâncias criadas, o job só fosse executado uma vez,
+    não seria o comportamento que queríamos.
+    O @Singleton, independente de quantos usuários estão requisitando a nossa aplicação,
+    teríamos uma única instância desse objeto.
+     */
+
 }
