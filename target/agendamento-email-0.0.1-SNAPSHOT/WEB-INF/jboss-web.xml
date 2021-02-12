@@ -3,3 +3,6 @@
 <jboss-web>
     <context-root>agendamento</context-root>
 </jboss-web>
+
+<!--Aqui alteramos o contexto na barra de endereço para localhost:8080/agendamento/emails-->
+<!--Antes tinhamos localhost:8080/agendamento-email-0.0.1-SNAPSHOT/emails-->

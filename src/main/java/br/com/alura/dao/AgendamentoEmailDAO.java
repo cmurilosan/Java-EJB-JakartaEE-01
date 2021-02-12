@@ -43,4 +43,15 @@ public class AgendamentoEmailDAO {
     /*
     Adicionamos @Stateless na Classe e @PersistenceContext no atributo
      */
+
+    public List<AgendamentoEmail> listarPorNaoAgendado() {
+        return entityManager
+                .createQuery("SELECT ae FROM AgendamentoEmail ae WHERE ae.agendado = false",
+                        AgendamentoEmail.class).getResultList();
+    }
+
+    public void alterar(AgendamentoEmail agendamentoEmail) {
+        entityManager.merge(agendamentoEmail);
+        //merge é quem fará o UPDATE
+    }
 }

@@ -21,3 +21,5 @@
   - Para abstrair a complexidade do protocolo, o **Jakarta EE** nos provê um recurso chamado **JAX-RS**.
   - O **JAX-RS** fornecerá um conjunto de classes, interfaces e anotações.
   - Com pequenas configurações, podemos definir o método da requisição, o tipo de formato que a aplicação irá consumir e/ou produzir, qual status a resposta da requisição irá retornar, entre outras facilidades.
+  
+#### 05 - Agendamento com TimerService
