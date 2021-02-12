@@ -25,3 +25,18 @@
 #### 05 - Agendamento com TimerService
 - Criando o job de envio de e-mail
 - Usando Singleton
+- Stateless x Stateful x Singleton
+    - **Stateless:** 
+        - Ocorre para cenários em que a requisição não precisa guardar estado. São invocados, processados e retornam o resultado para o cliente que o requisitou. 
+    - **Stateful:** 
+        - Ocorre para cenários em que a requisição deve guardar estado. A invocação é feita e deve durar mais que uma chamada. Um exemplo seria o carrinho de compras de sites e-commerce, onde o usuário pode colocar itens no carrinho e voltar depois para finalizar a compra. 
+    - **Singleton:** 
+        - A instância é criada apenas uma vez e disponibilizada para todo o sistema. Qualquer alteração feita em um componente Singleton estará visível para todos os usuários da aplicação.
+- MDB (Message-Driven Beans)
+    - Não está ligado diretamente ao cliente, ou seja, um cliente não faz uma requisição diretamente para um **MDB**. Eles seguem o paradigma de comunicação assíncrona, em que a interação se dá através de troca de mensagens. A requisição será feita por um **provedor (ou broker)** que fará o envio de mensagens e o **MDB** deverá processá-las. Um provedor é uma aplicação que cria, gerencia e transmite mensagens através do **JMS (Java Message Service)** que é uma especificação do **Jakarte EE**.
+- Entity Beans
+    - é um componente usado para persistência de dados. De forma resumida, as entidades do sistema são dados que serão armazenados em uma estrutura de dados, como um banco de dados. Cada instância do bean equivale a um registro nessa estrutura. A vantagem de se trabalhar com entidades, é que não precisamos nos preocupar com a manipulação dos dados diretamente no banco de dados. Outra vantagem é o controle dos serviços por parte do servidor de aplicação.   
+- Resumo:
+    - Com a anotação `@Schedule`, do **EJB**, conseguimos facilmente criar um agendamento de execuções de um determinado serviço.
+    - Temos que entender o cenário proposto e verificar se aquela atividade permite concorrência ou não.
+    - Caso o cenário proposto não permita, temos a opção de criar uma única instância do objeto e compartilhá-la para todo o sistema. Isso é feito através do componente Singleton do **EJB** e para utilizá-lo, basta que anotemos nossa classe com `@Singleton`.
