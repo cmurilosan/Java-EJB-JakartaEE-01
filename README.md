@@ -40,3 +40,10 @@
     - Com a anotação `@Schedule`, do **EJB**, conseguimos facilmente criar um agendamento de execuções de um determinado serviço.
     - Temos que entender o cenário proposto e verificar se aquela atividade permite concorrência ou não.
     - Caso o cenário proposto não permita, temos a opção de criar uma única instância do objeto e compartilhá-la para todo o sistema. Isso é feito através do componente Singleton do **EJB** e para utilizá-lo, basta que anotemos nossa classe com `@Singleton`.
+
+#### 06 - Messageria com JMS
+- Podemos fazer o envio de mensagens de forma assíncrona.
+- Para o correto funcionamento dessa abordagem, precisamos configurar um recurso, no nosso servidor de aplicação ou em um repositório externo, que se chama **Fila JMS**.
+- **JMS** é uma especificação do **Jakarta EE** e significa **Jakarta Message Service**.
+- É necessário configurarmos um producer, classe responsável pelo envio das mensagens para a fila.
+- Uma vez persistida as mensagens na fila, podemos criar um consumer, classe responsável por consumir e processar as mensagens. 
