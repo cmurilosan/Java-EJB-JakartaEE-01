@@ -1,12 +1,13 @@
 package br.com.alura.servico;
 
-import br.com.alura.dao.AgendamentoEmailDAO;
-import br.com.alura.entidade.AgendamentoEmail;
+import java.util.List;
+import java.util.logging.Logger;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import java.util.List;
-import java.util.logging.Logger;
+
+import br.com.alura.dao.AgendamentoEmailDAO;
+import br.com.alura.entidade.AgendamentoEmail;
 
 @Stateless
 public class AgendamentoEmailServico {
@@ -38,8 +39,8 @@ public class AgendamentoEmailServico {
     public void enviar(AgendamentoEmail agendamentoEmail) {
         try {
             Thread.sleep(5000);
-            LOGGER.info("O email do(a) usurário(a) " + agendamentoEmail.getEmail()
-            + " foi enviado!");
+            LOGGER.info("O e-mail do(a) usuário(a) " + agendamentoEmail.getEmail()
+                    + " foi enviado!");
         } catch (Exception e) {
             LOGGER.warning(e.getMessage());
         }

@@ -32,8 +32,8 @@ public class AgendamentoEmailDAO {
     private EntityManager entityManager;
 
     public List<AgendamentoEmail> listar() {
-        return entityManager.createQuery("select ae from AgendamentoEmail ae", AgendamentoEmail.class)
-                .getResultList();
+        return entityManager.createQuery("SELECT ae FROM AgendamentoEmail ae",
+                AgendamentoEmail.class).getResultList();
     }
 
     public void inserir(AgendamentoEmail agendamentoEmail) {
@@ -52,6 +52,5 @@ public class AgendamentoEmailDAO {
 
     public void alterar(AgendamentoEmail agendamentoEmail) {
         entityManager.merge(agendamentoEmail);
-        //merge é quem fará o UPDATE
     }
 }
